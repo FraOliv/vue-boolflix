@@ -22,7 +22,7 @@
 
 
   <!-- fontawesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
   <!-- /fontawesome -->
 
 
@@ -46,7 +46,7 @@
   <main>
  <div id="app" >
       <nav class="navleft">
-        <h1>BOOLFLIX</h1>;
+        <h1>BOOLFLIX</h1>
       </nav>
 
       <nav class="navright">
@@ -55,41 +55,19 @@
       </nav>
       <div class="container flex">
 
-    <div class="movie_card flex column" v-for="(film, index) in listaFilm">
+       <div class="movie_card flex column" v-for="(film, index) in listaFilm">
       <img src="" alt="">
       <h3 class="title">{{listaFilm[index].title}}</h3>
       <span class="original_title">{{listaFilm[index].original_title}}</span>
       <span class="original_language">{{listaFilm[index].original_language}}</span>
-      <span class="vote_avarage">{{listaFilm[index].vote_average}}</span>
-           <span>
-            <img :src=`https://www.countryflags.io/${film.original_language}/flat/32.png` alt=""></span> 
-       
-    <div class="flex">
-          <i class="fas fa-star" v-for="film in listaFilm[index].vote_average"></i>
-        <i class="far fa-star" v-for="film in 5 - listaFilm[index].vote_average"></i>
-    </div>
-      </div>
+      <span class="vote_count">{{listaFilm[index].vote_count}}</span>
 
-        <div class="movie_card flex column" v-for="(film, index) in serieTV">
-      <img src="" alt="">
-      <h3 class="title">{{serieTV[index].title}}</h3>
-      <span class="original_title">{{serieTV[index].original_name}}</span>
-      <span class="vote_avarage">{{serieTV[index].vote_average}}</span>
-      <span class="original_language">{{serieTV[index].original_language}}</span>
-           <span>
-            <img :src=`https://www.countryflags.io/${film.original_language}/flat/32.png` alt=""></span> 
-       
-    <div class="flex">
-          <i class="fas fa-star" v-for="film in serieTV[index].vote_average"></i>
-        <i class="far fa-star" v-for="film in 5 - serieTV[index].vote_average"></i>
-    </div>
-      </div>
       
 
-    
+      </div>
     </div>
     </div>
-</main>
+
   <!-- /main -->
 
 

@@ -80,7 +80,7 @@ body {
   text-align: center;
   background-color: #343A40;
   color: white;
-  height: 200px;
+  height: 400px;
   
 }
 
@@ -91,4 +91,8 @@ body {
   font-size: 20px;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+.cover{
+ 
 }
