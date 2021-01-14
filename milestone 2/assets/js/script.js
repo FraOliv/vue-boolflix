@@ -5,7 +5,7 @@ let app = new Vue({
         RicercaUtente: '',
         listaFilm:[],
         serieTV: [],
-
+        coverurl: "https://image.tmdb.org/t/p/w185"
 
     },
  methods: {
