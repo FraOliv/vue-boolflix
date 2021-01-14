@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous" />
+  <!-- /bootstrap -->
+
+  <!-- css -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- /css -->
+
+  <!-- /mediaquery -->
+  <link rel="stylesheet" href="assets/mediaquery/mediaquery.css" />
+  <!-- /mediaquery -->
+
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" />
+  <!-- /fontawesome -->
+
+  <!-- google font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet" />
+  <!-- /google font -->
+
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- header -->
+  <header></header>
+  <!-- /header -->
+
+  <!-- main -->
+  <main>
+    <div id="app">
+      <nav class="navleft">
+        <h1>BOOLFLIX</h1>
+        ;
+      </nav>
+
+      <nav class="navright">
+        <input class="searchbar" v-model="RicercaUtente" />
+        <i class="fas fa-search" @click="CercaFilm()"></i>
+      </nav>
+      <div class="container flex">
+        <div class="movie_card flex column" v-for="(film, index) in listaFilm">
+
+          <div class="poster">
+            <img :src=`https://image.tmdb.org/t/p/w342${listaFilm[index].poster_path}` alt="" />
+          </div>
+
+          <div class="info">
+            <h3 class="title">{{listaFilm[index].title}}</h3>
+            <span class="original_title">{{listaFilm[index].original_title}}</span>
+            
+            
+            <span>
+              <img :src=`https://www.countryflags.io/${film.original_language}/shiny/32.png` alt=""></span>
+            <div class="star flex">
+              <i class="fas fa-star" v-for="film in listaFilm[index].vote_average"></i>
+              <i class="far fa-star" v-for="film in 5 - listaFilm[index].vote_average"></i>
+            </div>
+               <h4 class="overview">{{listaFilm[index].overview}}</h4>
+
+
+          </div>
+        </div>
+
+        <div class="movie_card flex column" v-for="(film, index) in serieTV">
+          <div class="poster">
+            <img :src=`https://image.tmdb.org/t/p/w342${serieTV[index].poster_path}` alt="" />
+          </div>
+
+         <div class="info">
+            <h3 class="title">{{serieTV[index].title}}</h3>
+          <span class="original_title">{{serieTV[index].original_name}}</span>
+        
+          <span>
+            <img :src=`https://www.countryflags.io/${film.original_language}/flat/32.png` alt=""></span>
+
+          <div class="star flex">
+            <i class="fas fa-star" v-for="film in serieTV[index].vote_average"></i>
+            <i class="far fa-star" v-for="film in 5 - serieTV[index].vote_average"></i>
+          </div>
+             <h4 class="overview">{{listaFilm[index].overview}}</h4>
+
+         </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- /main -->
+
+  <!-- footer -->
+  <footer></footer>
+  <!-- /footer -->
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js "></script>
+  <script type="text/javascript" src="assets/js/script.js"></script>
+</body>
+
+</html>
