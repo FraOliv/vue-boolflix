@@ -62,9 +62,8 @@ body {
 }
 
 .container{
-  width: 100vw;
+  width: 80vw;
   flex-wrap: wrap;
- 
   justify-content: center;
 }
 
@@ -81,9 +80,11 @@ body {
   background-color: #343A40;
   color: white;
   flex-wrap: wrap;
-  min-width: 342px;
-  
+  min-width: 350px;
   position: relative;
+  border: 1px solid white;
+ 
+  
   
 }
 
@@ -99,26 +100,34 @@ body {
 .info {
   opacity: 0;
   position: absolute;
-  bottom: 50%;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+   background-color: #343A40;
 
 
 }
 
 .poster:hover {
   opacity: 0;
+  overflow-y: hidden;
 }
 
 
 .movie_card:hover .info {
   color: black;
-  opacity: 2;
+  opacity: 1;
+  overflow-x: hidden;
+
 }
 .star{
   color: yellow;
-position: absolute;
-left: 10%;
-bottom: 5%;
-top: 5%;
+  margin-left: 40%
 
+
+}
+.overview{
+  overflow-y: scroll;
 }
 

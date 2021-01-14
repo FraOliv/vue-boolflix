@@ -52,7 +52,14 @@
       <div class="container flex">
         <div class="movie_card flex column" v-for="(film, index) in listaFilm">
 
-          <div class="poster">
+           <div class="poster">
+              <img
+                src="./assets/img/noimg.png"
+                alt=""
+                v-if="listaFilm[index].poster_path == null"
+              />
+              
+             
             <img :src=`https://image.tmdb.org/t/p/w342${listaFilm[index].poster_path}` alt="" />
           </div>
 
@@ -74,7 +81,13 @@
         </div>
 
         <div class="movie_card flex column" v-for="(film, index) in serieTV">
-          <div class="poster">
+       <div class="poster">
+              <img
+                src="./assets/img/noimg.png"
+                alt=""
+                v-if="serieTV[index].poster_path == null"
+              />
+             
             <img :src=`https://image.tmdb.org/t/p/w342${serieTV[index].poster_path}` alt="" />
           </div>
 
@@ -89,7 +102,7 @@
             <i class="fas fa-star" v-for="film in serieTV[index].vote_average"></i>
             <i class="far fa-star" v-for="film in 5 - serieTV[index].vote_average"></i>
           </div>
-             <h4 class="overview">{{listaFilm[index].overview}}</h4>
+             <h4 class="overview">{{serieTV[index].overview}}</h4>
 
          </div>
         </div>
