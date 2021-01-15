@@ -39,72 +39,74 @@
 
   <!-- main -->
   <main>
+
+
+
+
     <div id="app">
+
+
+
+
+
       <nav class="navleft">
-        <h1>BOOLFLIX</h1>
+      <img class="logo" src="./assets/img/boolflix.png" alt="">
         ;
       </nav>
 
       <nav class="navright">
         <input class="searchbar" v-model="RicercaUtente" />
-        <i class="fas fa-search" @click="CercaFilm()"  type="text" name="search" ></i>
+        <i class="fas fa-search" @click="CercaFilm()" type="text" name="search"></i>
       </nav>
       <div class="container flex">
+        
         <div class="movie_card flex column" v-for="(film, index) in listaFilm">
 
-           <div class="poster">
-              <img
-                src="./assets/img/noimg.png"
-                alt=""
-                v-if="listaFilm[index].poster_path == null"
-              />
-              
-             
+          <div class="poster">
+            <img src="./assets/img/noimg.png" alt="" v-if="listaFilm[index].poster_path == null" />
+
+
             <img :src=`https://image.tmdb.org/t/p/w342${listaFilm[index].poster_path}` alt="" />
           </div>
 
           <div class="info">
-            <h3 class="title">{{listaFilm[index].title}}</h3>
+            <h2 class="title">{{listaFilm[index].title}}</h2>
             <span class="original_title">{{listaFilm[index].original_title}}</span>
-            
-            
+
+
             <span>
-              <img :src=`https://www.countryflags.io/${film.original_language}/shiny/32.png` alt=""></span>
+              <img class="flag" :src=`https://www.countryflags.io/${film.original_language}/shiny/48.png` alt=""></span>
             <div class="star flex">
               <i class="fas fa-star" v-for="film in listaFilm[index].vote_average"></i>
               <i class="far fa-star" v-for="film in 5 - listaFilm[index].vote_average"></i>
             </div>
-               <h4 class="overview">{{listaFilm[index].overview}}</h4>
+            <h4 class="overview">{{listaFilm[index].overview}}</h4>
 
 
           </div>
         </div>
 
         <div class="movie_card flex column" v-for="(film, index) in serieTV">
-       <div class="poster">
-              <img
-                src="./assets/img/noimg.png"
-                alt=""
-                v-if="serieTV[index].poster_path == null"
-              />
-             
-            <img :src=`https://image.tmdb.org/t/p/w342${serieTV[index].poster_path}` alt="" />
+          <div class="poster">
+            <img src="./assets/img/noimg.png" alt="" v-if="serieTV[index].poster_path == null" />
+
+            <img class="flag" :src=`https://image.tmdb.org/t/p/w342${serieTV[index].poster_path}` alt="" />
           </div>
 
-         <div class="info">
+          <div class="info">
             <h3 class="title">{{serieTV[index].title}}</h3>
-          <h3 class="original_title">{{serieTV[index].original_name}}</h3>
-        
-          <span>
-            <img :src=`https://www.countryflags.io/${film.original_language}/flat/32.png` alt=""></span>
+            <h3 class="original_title">{{serieTV[index].original_name}}</h3>
 
-          <div class="star flex">
-            <i class="fas fa-star" v-for="film in serieTV[index].vote_average"></i>
-            <i class="far fa-star" v-for="film in 5 - serieTV[index].vote_average"></i>
+            <span>
+              <img :src=`https://www.countryflags.io/${film.original_language}/flat/48.png` alt=""></span>
+
+            <div class="star flex">
+              <i class="fas fa-star" v-for="film in serieTV[index].vote_average"></i>
+              <i class="far fa-star" v-for="film in 5 - serieTV[index].vote_average"></i>
+            </div>
+            <h4 class="overview">{{serieTV[index].overview}}</h4>
+
           </div>
-             <h4 class="overview">{{serieTV[index].overview}}</h4>
-
-         </div>
         </div>
       </div>
     </div>

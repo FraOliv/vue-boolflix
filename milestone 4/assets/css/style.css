@@ -11,6 +11,13 @@ body {
   width: 100vw;
   background-color: #0f1214;
 }
+h2{
+  font-weight: bold ;
+}
+
+.logo{
+    margin-left: 10%;
+}
 
 .flex {
   display: flex;
@@ -26,6 +33,10 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
+
+.flag{
+  font-size: 25px;
 }
 
 .navleft h1 {
@@ -84,7 +95,7 @@ body {
   flex-wrap: wrap;
   min-width: 400px;
   position: relative;
-  border: 1px solid white;
+  border: 2px solid white;
   
 
   
@@ -108,6 +119,8 @@ body {
   height: 100%;
   width: 100%;
    background-color: #343A40;
+   border-radius: 5%;
+   border: 2px solid white;
 
 
 }
@@ -117,23 +130,30 @@ body {
   opacity: 0.1;
   overflow-y: hidden;
   transition: 1s;
+   transform: scale(1.1);
+   
 }
 
 
 .movie_card:hover .info {
-  color: black;
+  color: white;
   opacity: 1;
   overflow-x: hidden;
   transition: 1s;
+   transform: scale(1.1);
   
 
 
 }
 .star{
-  color: yellow;
-  margin-left: 40%
+     color: yellow;
+     margin-left: 31%;
+     font-size: 26px;
+ }
 
 
+.fas fa-star{
+  font-size: 200px;
 }
 .overview{
   overflow-y: scroll;
