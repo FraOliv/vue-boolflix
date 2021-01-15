@@ -4,10 +4,12 @@
   box-sizing: border-box;
 }
 
+
+
 body {
   height: 100vh;
   width: 100vw;
-  background-color: #2F4F4F;
+  background-color: #0f1214;
 }
 
 .flex {
@@ -72,7 +74,7 @@ body {
    
   align-items: center;
   justify-content: space-evenly;
-  margin: 5px;
+  margin: 25px;
   border: 2px solid black;
   padding: 10px;
   border-radius: 10px;
@@ -80,10 +82,11 @@ body {
   background-color: #343A40;
   color: white;
   flex-wrap: wrap;
-  min-width: 350px;
+  min-width: 400px;
   position: relative;
   border: 1px solid white;
- 
+  
+
   
   
 }
@@ -109,9 +112,11 @@ body {
 
 }
 
-.poster:hover {
-  opacity: 0;
+
+.movie_card:hover .poster {
+  opacity: 0.1;
   overflow-y: hidden;
+  transition: 1s;
 }
 
 
@@ -119,6 +124,9 @@ body {
   color: black;
   opacity: 1;
   overflow-x: hidden;
+  transition: 1s;
+  
+
 
 }
 .star{
@@ -131,3 +139,18 @@ body {
   overflow-y: scroll;
 }
 
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+::-webkit-scrollbar-thumb {
+  background: #403a3a;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #827d7d;
+}
+::-webkit-scrollbar-track {
+  background: #221f1f;
+  border-radius: 10px;
+}

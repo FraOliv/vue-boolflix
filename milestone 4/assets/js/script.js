@@ -5,6 +5,7 @@ let app = new Vue({
         RicercaUtente: '',
         listaFilm:[],
         serieTV: [],
+        
       
 
     },

@@ -47,7 +47,7 @@
 
       <nav class="navright">
         <input class="searchbar" v-model="RicercaUtente" />
-        <i class="fas fa-search" @click="CercaFilm()"></i>
+        <i class="fas fa-search" @click="CercaFilm()"  type="text" name="search" ></i>
       </nav>
       <div class="container flex">
         <div class="movie_card flex column" v-for="(film, index) in listaFilm">
@@ -93,7 +93,7 @@
 
          <div class="info">
             <h3 class="title">{{serieTV[index].title}}</h3>
-          <span class="original_title">{{serieTV[index].original_name}}</span>
+          <h3 class="original_title">{{serieTV[index].original_name}}</h3>
         
           <span>
             <img :src=`https://www.countryflags.io/${film.original_language}/flat/32.png` alt=""></span>
